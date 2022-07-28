@@ -1,0 +1,12 @@
+%%  Computing L for observer
+L = place(, , )'
+
+%%  Computing F, G, H for observer
+F = A22 - L*A12;
+H = F*L - L*A11 + A21;
+G = -L*B1 + B2;
+
+%% Computing K for feedback loop
+A = [A11, A12; A21, A22];
+B = [B1; B2];
+K = place(A, B, [-150, -160, -170, -180])
